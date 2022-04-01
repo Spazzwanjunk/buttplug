@@ -503,8 +503,8 @@ impl ButtplugDevice {
       name,
       self.name(&deviceIDmod),
       self.address()
-      deviceIDmod += 1
     );
+    deviceIDmod += 1;
     self.display_name = Some(name.to_owned());
   }
 
