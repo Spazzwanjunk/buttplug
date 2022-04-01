@@ -494,13 +494,16 @@ impl ButtplugDevice {
       None => Ok(None),
     }
   }
+  // Added device ID append to create unique names for similar devices
+  let deviceIDmod = 1
 
   pub fn set_display_name(&mut self, name: &str) {
     info!(
       "Adding display name {} to device {} ({})",
       name,
-      self.name(),
+      self.name(&deviceIDmod),
       self.address()
+      deviceIDmod += 1
     );
     self.display_name = Some(name.to_owned());
   }
