@@ -501,11 +501,11 @@ impl ButtplugDevice {
     info!(
       "Adding display name {} to device {} ({})",
       name,
-      self.name(&deviceIDmod),
+      self.name(),
       self.address()
     );
+    self.display_name = Some(name.to_owned()&deviceIDmod);
     deviceIDmod += 1;
-    self.display_name = Some(name.to_owned());
   }
 
   pub fn display_name(&self) -> Option<String> {
