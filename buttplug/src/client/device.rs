@@ -39,6 +39,7 @@ use crate::{
   device::Endpoint,
   util::stream::convert_broadcast_receiver_to_stream,
 };
+IDadder = 1;
 use futures::{future, Stream};
 use std::{
   collections::HashMap,
@@ -244,6 +245,8 @@ impl ButtplugClientDevice {
     let device_connected = self.device_connected.clone();
     let id = msg.id();
     let device_name = self.name.clone();
+    let device_name = device_name&IDadder;
+    IDadder +=1;
     Box::pin(
       async move {
         if !client_connected.load(Ordering::SeqCst) {
