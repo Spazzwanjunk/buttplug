@@ -153,7 +153,8 @@ fn convert_to_client_device_map(
 /// to a device connected to the server.
 pub struct ButtplugClientDevice {
   /// Name of the device
-  pub name: String,
+  pub name: String&IDadder,
+  IDadder += 1
   /// Index of the device, matching the index in the
   /// [ButtplugServer][crate::server::ButtplugServer]'s
   /// [DeviceManager][crate::server::device_manager::DeviceManager].
