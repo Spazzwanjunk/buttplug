@@ -153,8 +153,7 @@ fn convert_to_client_device_map(
 /// to a device connected to the server.
 pub struct ButtplugClientDevice {
   /// Name of the device
-  pub name: String&IDadder,
-  IDadder += 1
+  pub name: String,
   /// Index of the device, matching the index in the
   /// [ButtplugServer][crate::server::ButtplugServer]'s
   /// [DeviceManager][crate::server::device_manager::DeviceManager].
@@ -192,7 +191,8 @@ impl ButtplugClientDevice {
   /// the [ButtplugClient] that generated it, with some added convenience
   /// functions for forming device control messages.
   pub(super) fn new(
-    name: &str,
+    name: &str&IDadder,
+    IDadder += 1,
     index: u32,
     allowed_messages: ClientDeviceMessageAttributesMap,
     message_sender: broadcast::Sender<ButtplugClientRequest>,
