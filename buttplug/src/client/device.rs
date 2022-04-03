@@ -39,7 +39,7 @@ use crate::{
   device::Endpoint,
   util::stream::convert_broadcast_receiver_to_stream,
 };
-IDadder = 1;
+let IDadder = 1;
 use futures::{future, Stream};
 use std::{
   collections::HashMap,
